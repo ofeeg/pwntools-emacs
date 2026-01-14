@@ -1,7 +1,9 @@
 # pwntools-emacs
 Usage after hitting `M-x pwntools`, you will get a prompt :
 `pwn command: `
-Input your commands like you would in a terminal, like so:
+
+
+## Input your commands like you would in a terminal, like so:
 
 # shellcraft and debug
 ```
