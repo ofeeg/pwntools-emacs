@@ -15,10 +15,11 @@ Version: 2025-10-16"
     (setcar xresult (aref xletters (random (length xletters))))
     (concat xresult)))
 
+
 (defun pwntools ()
   (interactive)
   (setq pwn-command (read-string "pwn command: "))
-  (setq pwn-path "/home/cleandust/.local/share/python/bin/pwn ")
+  (setq pwn-path  (replace-regexp-in-string "\n$"  " " (shell-command-to-string "which pwn")))
   (setq pwntools-buffer (generate-new-buffer "*pwntools*"))
   (if (string-match "--debug" pwn-command)
       (let ((new-pwn-command (concat (string-replace "--debug" "-f elf" pwn-command)))
